@@ -30,3 +30,6 @@ comment or remove the line from cipher.py:
     245-252
 
 hope it will work
+
+I have made simple explanation video 
+Link : https://youtu.be/xpB9UEC_39Q
