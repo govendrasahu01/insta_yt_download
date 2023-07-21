@@ -13,21 +13,24 @@ while check == "1":
     print("decription:", yt.description)
 
     print()
-    print("Do you want to download? ")
-    print("Enter 1 for YES or 2 for NO")
+    print("Enter 1 for Video or 2 for mp3")
     print()
     wanna_download = input("-> ")
 
+    print("downloading.....")
+
+    path = "youtube"
+    stream = yt.streams
+
     if wanna_download == "1":
-        print("downloading.....")
-
-        path = "youtube"
-        stream = yt.streams
         video = stream.filter(progressive = True, file_extension = "mp4").first()
-        video.download(path)
+    else:
+        video = stream.filter(only_audio=True).first()
+        
+    video.download(path)
 
-        print("downloading copleted chack youtube folder")
-        print()
+    print("downloading copleted chack youtube folder")
+    print()
 
     print("Do you want to use another link?")
     print("Enter 1 for YES or 2 for NO")
